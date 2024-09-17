@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+/* CSS Custom properties */
+
+:root {
+  /* Define Colors as colors */
+  --green: #00ebc7;
+  --red: #ff5470;
+  --yellow: #fde24f;
+  --black: #020303;
+  --darkBlue: #00214d;
+  --darkGrey: #222;
+  --grey: #cccccc;
+  --lightGrey: #f2f4f6;
+  --white: #fff;
+
+  /* Define Colors intentions */
+  --background: var(--white);
+  --textColor: var(--black);
+  --buttonTextColor: var(--black);
+  --lineColor: var(--grey);
+  --cardBg: var(--white);
+  --headerBackground: var(--background-color);
+  --footerBackground: var(--black);
+  --textLink: var(--green)
+
+  /* Styles */
+  --line: solid 1px var(--lineColor);
+
+  /* Spacing */
+  --space-xxs:  4px;
+  --space-xs:   8px;
+  --space-sm:   12px;
+  --space-md:   20px;
+  --space-lg:   32px;
+  --space-xl:   52px;
+  --space-xxl:  84px;
+
+  /* Positioning */
+  --containerPadding: 2.5%;
+  --headerHeight: 3rem;
+  --borderRadius: 10px;
+
+    /* Elevation */
+    --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+}
+
+main {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  header {
+    color: var(--accent-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--headerHeight);
+    background: var(--headerBackground);
+    box-shadow: var(--level-2);
+    padding: 0 var(--containerPadding);
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 600px;
+  }
+  
+  header nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    padding:.5rem;
+  
+  }
+  
+  header nav a + a {
+    margin-left: 10px;
+  }
+
+  .content-block {
+    margin-top: var(--space-lg);
+  }
+
+  footer {
+    --footerTextColor: var(--lightGrey);
+    color: var(--footerTextColor);
+    background: var(--footerBackground);
+    padding: 2rem var(--containerPadding);
+    text-align: center;
+  }
+  
+  footer a {
+    color: var(--footerTextColor);
+  }
+  
+  footer p {
+    margin-bottom: 0;
+    max-width: none;
+  }
