@@ -1,0 +1,65 @@
+
+.lead-img {
+    background: url("../images/AdobeStock_966904096-1.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#464646;
+    min-height:1000px;
+}
+
+.film-details {
+    background: url("../images/psybg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#464646;
+    min-height:1000px;
+    color: var(--gray-100);
+}
+
+section {
+    padding:2rem;
+    margin:0;
+}
+
+.intro-text {
+    width: 60vw;
+    margin: 0 auto;
+    color:var(--white);
+    text-align: center;
+}
+
+h2 {
+    line-height: 1;
+    margin:0 0 1rem 0;
+}
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid-container {
+    position: relative;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 32px;
+    gap: 32px;
+    
+    /* by default use min 200px wide columns auto-fit into width */
+    grid-template-columns: minmax(200px, 1fr);
+  }
+  
+  /* grids to 3 columns above mobile sizes */
+  @media (min-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 0;
+    }
+    
+    /* basic grids */
+    .grid-container.details {
+        width: 60vw;
+        margin: 0 auto;
+        grid-template-columns: 200px 1fr;
+    }
+
+  }

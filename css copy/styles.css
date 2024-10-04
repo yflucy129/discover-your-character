@@ -1,0 +1,430 @@
+/*
+* Harmonic Collection V1
+* Copyright 2024
+*
+*
+* Free to use under the MIT license.
+*/
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Font import
+- Variables
+- Themes
+- Base Styles
+- Typography
+- Links
+- Lists
+- Grid system
+- Flexbox
+- Utilities
+- Misc
+- Clearing
+- Media Queries
+*/
+
+
+
+/* Placeholder for Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+
+    /* VARIABLES */
+
+    /* Typography */
+  --headingFont: 'Bitter', serif;
+  --bodyFont: 'Inter', sans-serif;
+
+  --baseFontSize: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
+
+  --type-scale: 1.5;
+
+  --xlText: calc(var(--lgText) * var(--type-scale));
+  --lgText: calc(var(--mdText) * var(--type-scale));
+  --mdText: calc(var(--baseText) * var(--type-scale));
+  --xsText: calc(var(--smText) / var(--type-scale));
+  --smText: calc(var(--baseText) / var(--type-scale));
+  --baseText: var(--baseFontSize);
+
+  /* Neutrals & Gray tint ramp */
+  --gray-100: hsl(105, 2%, 90%);
+  --gray-200: hsl(105, 2%, 80%);
+  --gray-300: hsl(105, 2%, 70%);
+  --gray-400: hsl(105, 2%, 60%);
+  --gray-500: hsl(105, 2%, 55%);
+  --gray-600: hsl(105, 2%, 40%);
+  --gray-700: hsl(105, 2%, 30%);
+  --gray-800: hsl(105, 2%, 20%);
+  --gray-900: hsl(105, 2%, 10%);
+  
+  --black: hsl(0, 0%, 5%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Core colors */
+  --primary: hsl(76, 60%, 24%);
+  --primary-light: hsl(76, 68%, 75%);
+  --primary-dark: hsl(76, 63%, 16%);
+  --secondary: hsl(105, 4%, 22%);
+  --tertiary: hsl(202, 100%, 33%);
+
+  /* Accent colors */
+  --accent-1: hsl(23, 92%, 48%);
+  --accent-2: hsl(37, 90%, 51%);
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+
+  --space-0: 0;
+  --space-1: var(--space-xs);
+  --space-2: var(--space-sm);
+  --space-3: var(--space-md);
+  --space-4: var(--space-lg);
+  --space-5: var(--space-xl);
+  --space-6: var(--space-xxl);
+
+  /* Layout */
+  --max-width: 1440px;
+
+}
+
+/* Theme-specific styles */
+
+/* Light theme (default) */
+:root {
+  --bg: var(--gray-100);
+  --textColor: var(--black);
+}
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  --bg: var(--gray-900);
+  --textColor: var(--white);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+/* Theme switcher styles */
+.theme-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  font-size: var(--baseFontSize);
+  scroll-behavior: smooth;
+  font-family: var(--bodyFont);
+}
+
+body {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: var(--bodyFont);
+  color: var(--textColor); 
+  background-color: var(--bg);
+}
+
+main {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+header {
+  width: 80vw;
+  margin: 0 auto;
+  border-bottom: 5px solid var(--gray-700);
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header nav a {
+  color: var(--accent-1);
+  text-decoration: none;
+  padding:1rem 2rem 1rem 0;
+}
+
+header nav a + a {
+  margin-left: 10px;
+}
+
+footer {
+  color: var(--gray-100);
+  background: var(--gray-900);
+  padding: var(--space-3);
+  text-align: center;
+}
+footer nav {
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
+footer nav a {
+  text-decoration: none;
+  padding: var(--space-3);
+}
+
+footer a {
+  color: var(--gray-100);
+}
+
+footer p {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+section {
+  margin-bottom: var(--space-4);
+}
+
+figure {
+  padding:0;
+  margin:0;
+}
+
+figcaption {
+  font-size:var(--smText);
+  color: var(--textColor);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.primary {
+  background: var(--primary);
+}
+.primary-light {
+  background: var(--primary-light);
+}
+.primary-dark {
+  background: var(--primary-dark);
+}
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headingFont);
+  margin-bottom: var(--space-3);
+}
+
+h1 { font-size: var(--xlText); }
+h2 { font-size: var(--lgText); }
+h3 { font-size: var(--mdText); }
+h4 { font-size: var(--baseText); }
+h5 { font-size: var(--smText); }
+
+p {
+  margin-top: 0; 
+  margin-bottom:var(--space-3);
+}
+
+.caption, figcaption {
+  font-size: var(--smText);
+  color: var(--gray-500);
+}
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: var(--accent-1); }
+a:hover {
+  color: var(--accent-2); }
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: circle inside; }
+ol {
+  list-style: decimal inside; }
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+ul ul, ul ol, ol ol, ol ul {
+	font-size: var(--baseText);
+	margin: 1rem 0 1rem 3rem;
+	color: var(--textColor);
+}
+li {
+  margin-bottom: 0.5rem; }
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+   .grid-container {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 20px;
+    gap: 20px;
+    
+    /* by default use min 200px wide columns auto-fit into width */
+    grid-template-columns: minmax(200px, 1fr);
+  }
+  
+  /* grids to 3 columns above mobile sizes */
+  @media (min-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 0;
+    }
+    
+    /* basic grids */
+    .grid-container.col-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    .grid-container.col-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .grid-container.col-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-container.col-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-container.col-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .grid-container.full {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Example flexbox usage */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.card {
+  padding: var(--space-2);
+  background-color: var(--gray-200);
+  border-radius: var(--space-2);
+}
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+.text-left {
+	text-align: left; }
+  .text-center {
+    text-align: center; }
+.text-right {
+	text-align: right; }
+
+.color-swatch {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--gray-300);
+}
+.spacing-example {
+    background-color: var(--gray-200);
+    display: inline-block;
+}
+
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-width: 0;
+  border-top: 1px solid var(--gray-300); }
+
+
+  /* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+
+/* Larger than mobile (default point when grid becomes active) */
+@media (min-width: 600px) {}
+
+/* Larger than phablet */
+@media (min-width: 900px) {}
+
+/* Larger than tablet */
+@media (min-width: 1200px) {}
+
+
+
+

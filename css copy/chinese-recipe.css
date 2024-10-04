@@ -1,0 +1,134 @@
+:root {
+  /* Core colors */
+  --primary: hsl(170, 46%, 33%);
+  --secondary:hsl(171, 76%, 3%);
+  --tertiary: hsl(11, 82%, 55%);
+  --textColorlight: #EDE5CC;
+}
+
+body {
+    background: var(--tertiary);
+}
+
+main {
+    width: 100vw;
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    grid-template-rows: repeat(4, minmax(100px, auto));
+}
+
+section {
+    padding:0;
+    margin:0;
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+    list-style: circle inside; }
+  ol {
+    list-style: decimal inside; }
+  ol, ul {
+    padding-left: 0;
+    margin-top: 0; }
+  ul ul, ul ol, ol ol, ol ul {
+      font-size: var(--baseText);
+      margin: 1rem 0 1rem 3rem;
+    }
+  li {
+    margin-bottom: 0.5rem; 
+    color: var(--textColorlight);
+}
+
+.button-set {
+    list-style-type: none;
+    grid-column: 8 / 11;
+    grid-row: 1 / 3;
+    padding:1rem;
+}
+
+.custom-button {
+    background-color: #EDE5CC;
+    color: #EA522F;
+    border-radius: 24px;
+    padding: 8px 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-block {
+    display: grid;
+    grid-column: 1 / 8;
+    grid-row: 1 / 4;
+    background: var(--primary);
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+.secondary-block {
+    display: grid;
+    grid-column: 8 / 13;
+    grid-row: 1 / 4;
+    background: var(--secondary);
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+.tertiary-block {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-row: 4 / 5;
+    background: var(--tertiary);
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+.nav-menu {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 30px;
+    padding:1rem;
+
+}
+
+.title-block {
+    grid-column: 1 / 8;
+    grid-row: 2 / 3;
+    padding:1rem;
+    color: var(--textColorlight);
+}
+
+.recipe-description {
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+    color: var(--textColorlight);
+    padding:1rem;
+}
+.recipe-region {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: var(--textColorlight);
+    grid-column: 5 / 36;
+    grid-row: 1 / 4;
+    padding:1rem;
+    font-size: var(--mdText);
+    transform: rotate(-180deg);
+}
+
+h1 {
+    padding:0;
+    margin:0;
+}
+
+.food-image {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+}
+
+.ratings-block {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+    padding:1rem;
+
+}
+
