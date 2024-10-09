@@ -26,15 +26,15 @@
 
 
 /* Placeholder for Google Fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
 
     /* VARIABLES */
 
     /* Typography */
-  --headingFont: 'Bitter', serif;
-  --bodyFont: 'Inter', sans-serif;
+  --headingFont: 'Lora', serif;
+  --bodyFont: 'Raleway', sans-serif;
 
   --baseFontSize: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
 

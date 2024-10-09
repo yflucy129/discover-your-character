@@ -1,0 +1,105 @@
+:root {
+ --base: hsl(0, 0%, 100%);
+ --primary: hsl(0, 100%, 96%);
+ --secondary:hsl(345, 55%, 29%);
+ --tertiary: hsl(338, 72%, 15%);
+ --additional: hsl(355, 59%, 30%);
+ --textColorlight: #52142a;
+}
+
+body {
+    background: var(--base);
+}
+
+main {
+    width: 100vw; 
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    grid-column-gap: 10px; 
+    grid-row-gap: 10px; 
+    justify-items: center;
+    align-items: center; 
+}
+
+.block-1 {
+    background-color: var(--primary); 
+    grid-column: 3 / 19; 
+    grid-row: 3 / 4; 
+    width: 100%;
+    height: 100%; 
+    border: 1.5px solid var(--tertiary); 
+    border-radius: 15px; 
+}
+
+.headline-title {
+    display: grid;
+    grid-column: 11 / 12;
+    grid-row: 1 / 2;
+    white-space: nowrap; 
+    font-size: 4rem; 
+    color: var(--tertiary); 
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+.overlay-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 145%);
+    font-size: 2.75rem;
+    color: var(--tertiary); 
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.75); 
+    border: 2px solid var(--secondary); 
+    border-radius: 30px; 
+    text-decoration: none; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.overlay-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9); 
+}
+
+.center-image {
+    max-width: 100%; 
+    max-height: 95%; 
+    object-fit: contain; 
+}
+
+.sub-headline {
+    grid-column: 6 / 15;
+    grid-row: 2 / 2; 
+    text-align: center; 
+    font-size: 1.5rem; 
+    color: var(--secondary); 
+    margin-top: 0.5rem;
+}
+
+.btn-link {
+    text-decoration: none;
+    grid-column: 7 / 14; 
+    grid-row: 10 / 12; 
+    align-self: end; 
+}
+
+.click-to-find-btn {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--base); 
+    background-color: var(--tertiary); 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+}
+
+.click-to-find-btn:hover {
+    background-color: var(--secondary);
+}
