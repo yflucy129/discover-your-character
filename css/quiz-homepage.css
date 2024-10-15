@@ -21,7 +21,7 @@ main {
     grid-row-gap: 10px;
     justify-items: center;
     align-items: center;
-    animation: popInBounce 1s ease-in-out; /* Add animation to the main content */
+    animation: popInBounce 1s ease-in-out; 
 }
 
 @keyframes popInBounce {
