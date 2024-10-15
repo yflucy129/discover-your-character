@@ -5,13 +5,13 @@
     --tertiary: hsl(338, 72%, 15%);
     --additional: hsl(355, 59%, 30%);
     --textColorlight: #52142a;
-   }
+}
    
-   body {
-       background: var(--primary);
-   }
+body {
+    background: var(--primary);
+}
 
-   main {
+main {
     width: 100vw; 
     height: 100vh; 
     display: grid;
@@ -21,8 +21,26 @@
     grid-row-gap: 10px; 
     justify-items: center;
     align-items: center; 
-}   
-     
+    animation: slideInBounce 1s ease-out; 
+}
+
+@keyframes slideInBounce {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .headline-title {
     grid-column: 10 / 10;
     grid-row: 1 / 2;
@@ -50,12 +68,31 @@
     grid-row: 5 / 12; 
     justify-items: center;
     width: 100%; 
+    animation: slideInBounce 1.2s ease-out; 
+}
+
+@keyframes imageSlideInBounce {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .image-grid img {
     max-width: 250px; 
     border-radius: 10px; 
     transition: transform 0.3s ease;
+    animation: imageSlideInBounce 1.2s ease-out;
 }
 
 .image-grid img:hover {
@@ -86,5 +123,3 @@
 .next-btn:hover {
     background-color: var(--tertiary); 
 }
-
-   
