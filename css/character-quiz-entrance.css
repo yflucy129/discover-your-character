@@ -10,13 +10,20 @@ html, body {
     overflow: hidden; /* Prevent scrollbars */
 }
 
-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire page */
+/* Center the GIF in the middle of the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* GIF styling */
+#background-gif {
+    max-width: 20%;  /* Make the GIF responsive */
+    height: auto;    /* Maintain aspect ratio */
+    z-index: -1;     /* Ensure it stays behind the text */
+    position: relative;
 }
 
 :root {
@@ -26,6 +33,10 @@ video {
     --tertiary: hsl(338, 72%, 15%);
     --additional: hsl(355, 59%, 30%);
     --textColorlight: #52142a;
+}
+
+body {
+    background: var(--secondary);
 }
 
 /* Grid container for the page */
@@ -38,6 +49,9 @@ main {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     animation: popInBounce 1s ease-in-out; 
+    position: absolute;  /* Place main on top of the centered GIF */
+    top: 0;
+    left: 0;
 }
 
 /* Fade-in animation using @keyframes */
@@ -57,7 +71,7 @@ main {
     font-size: 7rem;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: var(--primary);
     opacity: 0;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Add shadow to the text */
     animation: fadeIn 2s ease-in-out forwards;
@@ -72,7 +86,7 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: var(--primary);
     opacity: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
     animation: fadeIn 2s ease-in-out forwards;
