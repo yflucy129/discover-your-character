@@ -2,32 +2,63 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <title>Character-7</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/quiz-questions.css">
+  <link rel="stylesheet" href="../css/character-7-entry.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="../images/favicon.ico">
 </head>
 <body>
 
-    <main>
+  <audio id="background-audio" src="../images/character-7-voice.m4a"></audio>
 
-    </main>
-    
-    </body>
-    </html>
+  <div class="floating-text">
+    <span>"A blade embraces its duty as a jeweler cherishes their gems."</span>
+  </div>
+
+  <div class="floating-text-2">
+    <span>"A blade is like a tea-leaf. Only those who sample it many times can appreciate its true qualities."</span>
+  </div>
+
+  <main>
+    <p class="subtitle">Your character is...</p>
+    <h1 class="title">Kamisato Ayaka</h1>
+    <div class="image-box">
+      <img src="../images/character-7-background.webp" alt="Character Image">
+    </div>
+    <a href="https://genshin-impact.fandom.com/wiki/Venti" target="_blank"> 
+      <img src="../images/character-7-image.png" alt="Overlay Image" class="overlay-image">
+    </a>
+    <div class="hover-text">Click on me to see more</div>
+
+    <p class="description-text">Kamisato Ayaka is a dignified and graceful character in Genshin Impact, hailing from the esteemed Kamisato Clan in Inazuma. As the eldest daughter of the Kamisato family, Ayaka holds a significant role within the Yashiro Commission, responsible for managing internal and external affairs. Known as the "Shirasagi Himegimi," she is admired for her elegance, poise, and devotion to her duties, embodying both nobility and humility. Ayaka’s personality is marked by a balance between responsibility and kindness. She carries the weight of her family’s reputation with grace and is deeply committed to the people of Inazuma, always ensuring that the needs of others come before her own. Despite her high status, she is approachable, humble, and genuinely cares for those around her, often going out of her way to help even the common folk. Beneath her formal and composed exterior, Ayaka is a sensitive and gentle soul who sometimes yearns for the freedom to express herself beyond the obligations of her position. She finds solace in practicing her swordsmanship and embracing her love for nature, particularly in moments of peaceful solitude. In combat, Ayaka is swift and elegant, wielding her Cryo abilities with precision and fluidity, reflecting her inner strength and grace.</p>
+
+  </main>
+
+  <div class="interactive-container">
+    <a href="quiz-question-3.4.html" class="interactive-box">Previous Page</a>
+    <a href="character-quiz-home-page.html" class="interactive-box">Home Page</a>
+  </div>
+
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        var audio = document.getElementById("background-audio");
+        audio.play();
+      }, 2500); 
+    };
+  </script>
+
+</body>
+</html>

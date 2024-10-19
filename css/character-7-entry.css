@@ -1,9 +1,9 @@
 :root {
     --base: hsl(0, 0%, 100%);
-    --primary: hsl(66, 100%, 96%);
-    --secondary:hsl(18, 55%, 29%);
-    --tertiary: hsl(20, 71%, 15%);
-    --textColor: #522514;
+    --primary: hsl(237, 100%, 96%);
+    --secondary:hsl(235, 55%, 29%);
+    --tertiary: hsl(232, 71%, 15%);
+    --textColor: #141d52;
 }
 
 body {
@@ -97,7 +97,7 @@ main {
 }
 
 .title {
-    grid-column: 12 / 19;
+    grid-column: 11 / 19;
     grid-row: 2 / 3;
     font-size: 3rem;
     color: var(--tertiary);
@@ -166,7 +166,7 @@ main {
     gap: 40px; 
     width: 30%;
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     z-index: 4;
     animation-delay: 1.5s; 
 }
@@ -224,7 +224,7 @@ main {
 
 .overlay-image {
     position: absolute;
-    left: 175px;
+    left: 200px;
     top: 0px;
     height: 100%;
     width: auto;
@@ -237,8 +237,8 @@ main {
 .hover-text {
     position: absolute;
     top: 73%; 
-    left: 230px; 
-    background-color: rgba(43, 113, 93, 0.7); 
+    left: 250px; 
+    background-color: rgba(26, 73, 135, 0.7); 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;

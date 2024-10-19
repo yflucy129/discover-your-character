@@ -1,13 +1,13 @@
 :root {
     --base: hsl(0, 0%, 100%);
-    --primary: hsl(15, 100%, 96%);
+    --primary: hsl(27, 100%, 96%);
     --secondary:hsl(18, 55%, 29%);
     --tertiary: hsl(20, 71%, 15%);
     --textColor: #522514;
 }
 
 body {
-    background: var(--base);
+    background: var(--primary);
     margin: 0;
     padding: 0;
     height: 100vh;
