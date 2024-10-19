@@ -183,31 +183,3 @@ main {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
-/* quiz-question-3.4 */
-.options-container1 {
-    grid-column: 5 / 17; 
-    grid-row: 5 / 5; 
-    display: flex; 
-    justify-content: space-around; 
-    width: 120%;
-    animation: slideInBounce 1.2s ease-out;
-}
-
-.option-box2 {
-    background-color: var(--primary); 
-    border: 2px solid var(--tertiary); 
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-    width: 100%; 
-    text-decoration: none;
-    color: var(--secondary); 
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.option-box2:hover {
-    transform: scale(1.05); 
-    background-color: var(--secondary); 
-    color: var(--base); 
-}

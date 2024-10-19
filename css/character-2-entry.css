@@ -1,0 +1,269 @@
+:root {
+    --base: hsl(0, 0%, 100%);
+    --primary: hsl(15, 100%, 96%);
+    --secondary:hsl(18, 55%, 29%);
+    --tertiary: hsl(20, 71%, 15%);
+    --textColor: #522514;
+}
+
+body {
+    background: var(--base);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative; 
+}
+
+.floating-text, .floating-text-2 {
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1; 
+    color: var(--secondary);
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.floating-text {
+    top: 20px;
+}
+
+.floating-text-2 {
+    top: 70px;
+}
+
+.floating-text span, .floating-text-2 span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: slideText 30s linear infinite;
+}
+
+.floating-text-2 span {
+    animation-delay: 4s; 
+}
+
+@keyframes slideText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    z-index: 2; 
+}
+
+@keyframes slideInBounceWithOpacity {
+    0% {
+        transform: translateX(100%); 
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(-10px); 
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(5px); 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1;
+    }
+}
+
+.subtitle, .title {
+    opacity: 0; 
+    animation: slideInBounceWithOpacity 1s ease-out forwards;
+}
+
+.subtitle {
+    grid-column: 13 / 19;
+    grid-row: 2 / 2;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    text-align: right;
+    animation-delay: 0.3s; 
+}
+
+.title {
+    grid-column: 11 / 19;
+    grid-row: 2 / 3;
+    font-size: 3rem;
+    color: var(--tertiary);
+    text-align: right;
+    animation-delay: 0.5s; 
+}
+
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.image-box, .description-text, .interactive-container {
+    opacity: 0;
+    animation: popUp 1s ease-out forwards;
+}
+
+.image-box {
+    grid-column: 2 / 20; 
+    grid-row: 3 / 10; 
+    background-color: var(--primary);
+    border: 2px solid var(--tertiary); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    position: relative;
+    overflow: visible; 
+    animation-delay: 1s; 
+}
+
+.image-box img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.description-text {
+    position: absolute;
+    right: 120px;
+    top: 250px;
+    font-size: 0.85rem;
+    max-width: 700px;
+    color: var(--tertiary);
+    background-color: rgba(255, 255, 255, 0.715);
+    z-index: 3;
+    line-height: 1.6;
+    padding: 15px;
+    border-radius: 10px;
+    animation-delay: 1.2s;
+}
+
+.interactive-container {
+    grid-column: 18 / 20;
+    grid-row: 9 / 10;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; 
+    width: 30%;
+    position: absolute;
+    bottom: 30px;
+    z-index: 4;
+    animation-delay: 1.5s; 
+}
+
+.interactive-box {
+    background-color: var(--secondary);
+    color: var(--base);
+    border: 2px solid var(--tertiary);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 48%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.interactive-box:hover {
+    background-color: var(--tertiary);
+    transform: scale(1.05);
+}
+
+.description {
+    grid-column: 2 / 3; 
+    grid-row: 1 / 1; 
+    align-self: center;
+    justify-self: center; 
+    color: var(--textColor); 
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.75); 
+    border-radius: 15px;
+    max-width: 90%;
+}
+
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.overlay-image {
+    position: absolute;
+    left: 70px;
+    top: 0px;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    z-index: 10;
+    animation: fadeInBounce 1s ease-out forwards;
+    animation-delay: 2s; 
+}
+
+.hover-text {
+    position: absolute;
+    top: 73%; 
+    left: 230px; 
+    background-color: rgba(135, 72, 26, 0.7); 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    z-index: 11; 
+    opacity: 0; 
+    transform: scale(0.5); 
+    animation: popUpHoverText 0.8s ease forwards;
+    animation-delay: 2.5s; 
+}
+
+@keyframes popUpHoverText {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05); 
+    }
+    80% {
+        transform: scale(0.95); 
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1;
+    }
+}

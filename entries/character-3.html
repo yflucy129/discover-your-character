@@ -2,32 +2,63 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs -->
   <meta charset="utf-8">
-  <title>Character-3</title>
+  <title>Character-1</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/quiz-questions.css">
+  <link rel="stylesheet" href="../css/character-3-entry.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="../images/favicon.ico">
 </head>
 <body>
 
-    <main>
+  <audio id="background-audio" src="../images/character-3-voiceline.m4a"></audio>
 
-    </main>
-    
-    </body>
-    </html>
+  <div class="floating-text">
+    <span>"Sometimes the law is compatible with human nature, but sometimes the two conflict. Balancing the two is a discipline in its own right..."</span>
+  </div>
+
+  <div class="floating-text-2">
+    <span>"I'll remind you again: The law can be both a help and a hindrance."</span>
+  </div>
+
+  <main>
+    <p class="subtitle">Your character is...</p>
+    <h1 class="title">YanFei</h1>
+    <div class="image-box">
+      <img src="../images/character-3-background.webp" alt="Character Image">
+    </div>
+    <a href="https://genshin-impact.fandom.com/wiki/Yanfei" target="_blank"> 
+      <img src="../images/character-3-image.png" alt="Overlay Image" class="overlay-image">
+    </a>
+    <div class="hover-text">Click on me to see more</div>
+
+    <p class="description-text">Yanfei, a half-illuminated beast and Liyue's top legal adviser, is a character marked by her sharp intellect and unwavering dedication to justice. Born to a human father and an Adeptus mother, Yanfei is one of the few hybrid beings who have fully integrated into the human world, using her immense knowledge of Liyue’s legal system to ensure fairness and uphold the law.Her personality is a balance of professionalism and optimism. She approaches every case with meticulous attention to detail, always ensuring her clients understand their rights and obligations. Despite her serious profession, Yanfei is far from stern. She’s easygoing, with a warm and friendly demeanor, making her approachable to anyone seeking her counsel. Her passion for law is rooted in her love for freedom—she believes that through clear understanding and enforcement of the law, people can live freely and safely. In combat, Yanfei’s mastery of Pyro magic is as precise as her legal expertise. She conjures flames with grace, delivering powerful attacks while maintaining her calm composure. Her fiery abilities reflect her inner drive for justice, making her a formidable ally. Yanfei embodies intelligence, freedom, and fairness, always striving for a world where law brings balance and peace.</p>
+
+  </main>
+
+  <div class="interactive-container">
+    <a href="quiz-question-3.2.html" class="interactive-box">Previous Page</a>
+    <a href="character-quiz-home-page.html" class="interactive-box">Home Page</a>
+  </div>
+
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        var audio = document.getElementById("background-audio");
+        audio.play();
+      }, 2500); 
+    };
+  </script>
+
+</body>
+</html>
