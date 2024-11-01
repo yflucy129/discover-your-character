@@ -1,27 +1,27 @@
 :root {
     --base: hsl(0, 0%, 100%);
     --primary: hsl(0, 100%, 96%);
-    --secondary:hsl(345, 55%, 29%);
+    --secondary: hsl(345, 55%, 29%);
     --tertiary: hsl(338, 72%, 15%);
     --additional: hsl(355, 59%, 30%);
     --textColorlight: #52142a;
 }
-   
+
 body {
     background: var(--primary);
 }
 
 main {
-    width: 100vw; 
-    height: 100vh; 
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(18, 1fr);
-    grid-column-gap: 10px; 
-    grid-row-gap: 10px; 
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     justify-items: center;
-    align-items: center; 
-    animation: slideInBounce 1s ease-out; 
+    align-items: center;
+    animation: slideInBounce 1s ease-out;
 }
 
 @keyframes slideInBounce {
@@ -45,7 +45,7 @@ main {
     grid-column: 10 / 10;
     grid-row: 1 / 2;
     font-size: 3rem;
-    white-space: nowrap; 
+    white-space: nowrap;
     color: var(--tertiary);
     text-align: center;
 }
@@ -61,14 +61,14 @@ main {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 20px;
-    grid-column: 3 / 19; 
-    grid-row: 5 / 12; 
+    grid-column: 3 / 19;
+    grid-row: 5 / 12;
     justify-items: center;
-    width: 100%; 
-    animation: slideInBounce 1.2s ease-out; 
+    width: 100%;
+    animation: slideInBounce 1.2s ease-out;
 }
 
 @keyframes imageSlideInBounce {
@@ -88,20 +88,57 @@ main {
     }
 }
 
-.image-grid img {
-    max-width: 250px; 
-    border-radius: 10px; 
-    transition: transform 0.3s ease;
-    animation: imageSlideInBounce 1.2s ease-out;
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    width: 100%;
+    justify-items: center;
 }
 
-.image-grid img:hover {
-    transform: scale(1.2); 
+.image-grid a {
+    position: relative;
+    width: 250px; /* Set consistent width for each image container */
+    height: 250px; /* Set consistent height */
+    overflow: hidden; /* Ensure images don't spill outside the container */
 }
+
+.image-grid img.default-img,
+.image-grid img.hover-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Scale image to fit within the container without cropping */
+    border-radius: 10px;
+    transform: translate(-50%, -50%); /* Center the image */
+    transition: opacity 0.5s ease;
+}
+
+.image-grid img.default-img {
+    z-index: 1;
+    opacity: 1;
+}
+
+.image-grid img.hover-img {
+    z-index: 2;
+    opacity: 0;
+}
+
+.image-grid a:hover img.default-img {
+    opacity: 0;
+}
+
+.image-grid a:hover img.hover-img {
+    opacity: 1;
+}
+
 
 .btn-link {
-    grid-column: 7 / 14; 
-    grid-row: 16 / 18; 
+    grid-column: 7 / 14;
+    grid-row: 16 / 18;
     align-self: end;
     text-decoration: none;
 }
@@ -109,10 +146,10 @@ main {
 .next-btn {
     text-align: center;
     font-size: 1.5rem;
-    color: var(--base); 
-    background-color: var(--secondary); 
+    color: var(--base);
+    background-color: var(--secondary);
     padding: 10px 20px;
-    border: 2px solid var(--tertiary); 
+    border: 2px solid var(--tertiary);
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -121,5 +158,6 @@ main {
 }
 
 .next-btn:hover {
-    background-color: var(--tertiary); 
+    background-color: var(--tertiary);
 }
+
