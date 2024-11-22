@@ -1,7 +1,7 @@
 :root {
     --base: hsl(0, 0%, 100%);
     --primary: hsl(0, 100%, 96%);
-    --secondary:hsl(345, 55%, 29%);
+    --secondary: hsl(345, 55%, 29%);
     --tertiary: hsl(338, 72%, 15%);
     --additional: hsl(355, 59%, 30%);
     --textColorlight: #52142a;
@@ -9,8 +9,11 @@
 
 body {
     background: var(--base);
+    margin: 0;
+    padding: 0;
 }
 
+/* Main container */
 main {
     width: 100vw;
     height: 100vh;
@@ -21,9 +24,9 @@ main {
     grid-row-gap: 10px;
     justify-items: center;
     align-items: center;
-    animation: popInBounce 1s ease-in-out; 
 }
 
+/* Animations */
 @keyframes popInBounce {
     0% {
         transform: scale(0.5);
@@ -34,11 +37,24 @@ main {
         opacity: 1;
     }
     80% {
-        transform: scale(0.9);
+        transform: scale(0.95);
     }
     100% {
         transform: scale(1);
     }
+}
+
+/* Headline */
+.headline-title {
+    grid-column: 10 / 12;
+    grid-row: 1 / 1;
+    font-size: 3.15rem;
+    color: var(--tertiary);
+    text-align: center;
+    white-space: nowrap;
+    animation: popInBounce 1s ease-in-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards; /* Ensures element stays hidden before animation */
 }
 
 .block-1 {
@@ -49,55 +65,65 @@ main {
     height: 100%;
     border: 1.5px solid var(--tertiary);
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative; /* Anchor the absolute button */
+    animation: popInBounce 1s ease-in-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
 }
 
-.headline-title {
-    display: grid;
-    grid-column: 10 / 12;
-    grid-row: 1 / 1;
-    white-space: nowrap;
-    font-size: 3.15rem;
-    color: var(--tertiary);
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
-}
-
+/* Overlay button */
 .overlay-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-55%, 25%);
-    font-size: 2.25rem;
+    position: absolute; /* Keep button above other elements */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Prevent dislocation during animation */
+    z-index: 10; /* Keep button above all other elements */
+    font-size: 1.5rem;
     color: var(--tertiary);
-    text-align: center;
-    padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.75);
+    padding: 10px 20px;
     border: 2px solid var(--secondary);
     border-radius: 30px;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    animation: popInBounce 1s ease-in-out;
+    animation-delay: 0.6s;
+    animation-fill-mode: backwards;
 }
 
 .overlay-btn:hover {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+/* Center Image */
 .center-image {
     max-width: 100%;
     max-height: 95%;
     object-fit: contain;
+    animation: popInBounce 1s ease-in-out;
+    animation-delay: 0.8s;
+    animation-fill-mode: backwards;
 }
 
+/* Sub-headline */
 .sub-headline {
     grid-column: 6 / 15;
     grid-row: 2 / 2;
-    text-align: center;
     font-size: 1.25rem;
     color: var(--secondary);
+    text-align: center;
     margin-top: 0.5rem;
+    animation: popInBounce 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
 }
 
+/* Button Link */
 .btn-link {
     text-decoration: none;
     grid-column: 7 / 14;
@@ -106,7 +132,6 @@ main {
 }
 
 .click-to-find-btn {
-    text-align: center;
     font-size: 1.5rem;
     color: var(--base);
     background-color: var(--tertiary);
@@ -114,43 +139,12 @@ main {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     width: 100%;
+    animation: popInBounce 1s ease-in-out;
+    animation-delay: 1.2s;
+    animation-fill-mode: backwards;
 }
 
 .click-to-find-btn:hover {
     background-color: var(--secondary);
-}
-
-.next-btn {
-    text-align: center;
-    font-size: 1.5rem;
-    color: var(--base);
-    background-color: var(--secondary);
-    padding: 10px 20px;
-    border: 2px solid var(--tertiary);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    max-width: 300px;
-}
-
-.next-btn:hover {
-    background-color: var(--tertiary);
-}
-
-.update-message {
-    position: fixed;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 15px;
-    border: 2px solid red;
-    color: red;
-    background-color: rgba(255, 0, 0, 0.1);
-    font-size: 1.1rem;
-    text-align: center;
-    border-radius: 5px;
-    z-index: 1000; /* High z-index to stay on top of other elements */
 }

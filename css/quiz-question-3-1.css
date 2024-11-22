@@ -1,16 +1,16 @@
 :root {
-    --base: hsl(0, 0%, 100%);
-    --primary2: #fce8cd;
-    --primary3: #dae6f2;
-    --primary: hsl(0, 100%, 96%);
-    --secondary:hsl(345, 55%, 29%);
-    --tertiary: hsl(338, 72%, 15%);
-    --additional: hsl(355, 59%, 30%);
-    --textColorlight: #52142a;
+    --base: hsl(0%, 0%, 100%);
+    --background: #fff5e6;
+    --primary: #fce8cd;
+    --secondary:#fdc441;
+    --tertiary: #ef852f;
+    --tertiary2: #a7d164;
+    --addition: #823d32;
+    --textColor: #50241d;
 }
 
 body {
-    background: var(--base);
+    background: var(--background);
 }
 
 /* Slide-in from the top with bounce */
@@ -44,21 +44,20 @@ main {
     animation: slideInBounce 1s ease-out; 
 }
 
-/* Question 1 */
-.return-home-btn {
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
-    font-size: 1rem;
-    text-align: center;
+.back-btn {
+    position: absolute;
+    top: 50px;
+    left: 20px; 
+    background-color: var(--addition);
+    color: var(--primary);
+    padding: 10px 20px;
     text-decoration: none;
-    color: var(--base); 
-    background-color: var(--secondary); 
-    padding: 10px 20px; 
-    border-radius: 10px; 
-    border: 2px solid var(--tertiary); 
-    transition: background-color 0.3s ease, transform 0.3s ease; 
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid var(--textColor);
+    transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
-    animation: slideInBounce 1.2s ease-out; 
+    animation: slideInBounce 0.8s ease-out; 
 }
 
 .headline-title {
@@ -66,7 +65,7 @@ main {
     grid-row: 1 / 2;
     font-size: 3rem;
     white-space: nowrap; 
-    color: var(--tertiary);
+    color: var(--textColor);
     text-align: center;
     animation: slideInBounce 1s ease-out; 
 }
@@ -75,7 +74,7 @@ main {
     grid-column: 4 / 18;
     grid-row: 2 / 2;
     font-size: 1.5rem; 
-    color: var(--secondary); 
+    color: var(--addition); 
     text-align: center;
     margin-top: 0.5rem;
     animation: slideInBounce 1s ease-out;
@@ -90,40 +89,40 @@ main {
     animation: slideInBounce 1.2s ease-out; 
 }
 
-.option-box {
-    background-color: var(--base); 
-    border: 2px solid var(--secondary); 
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-    width: 40%; 
-    text-decoration: none;
-    color: var(--secondary); 
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.option-box:hover {
-    transform: scale(1.05); 
-    background-color: var(--primary2); 
-    color: var(--secondary); 
-}
-
 .option-box1 {
-    background-color: var(--base); 
-    border: 2px solid var(--secondary); 
+    background-color: var(--secondary); 
+    border: 2px solid var(--textColor); 
     border-radius: 15px;
     text-align: center;
     padding: 20px;
     width: 40%; 
     text-decoration: none;
-    color: var(--secondary); 
+    color: var(--addition); 
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .option-box1:hover {
     transform: scale(1.05); 
-    background-color: var(--primary3); 
-    color: var(--secondary); 
+    background-color: var(--tertiary2); 
+    color: var(--base); 
+}
+
+.option-box2 {
+    background-color: var(--secondary); 
+    border: 2px solid var(--textColor); 
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    width: 40%; 
+    text-decoration: none;
+    color: var(--addition); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.option-box2:hover {
+    transform: scale(1.05); 
+    background-color: var(--tertiary); 
+    color: var(--base); 
 }
 
 .option-image {
@@ -132,4 +131,3 @@ main {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-

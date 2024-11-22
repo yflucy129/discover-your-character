@@ -224,7 +224,7 @@ main {
 
 .overlay-image {
     position: absolute;
-    left: 25px;
+    left: -10px;
     top: 0px;
     height: 100%;
     width: auto;

@@ -1,6 +1,7 @@
 :root {
     --base: hsl(0, 0%, 100%);
     --primary: hsl(0, 100%, 96%);
+    --primary2: hsl(347, 100%, 98%);
     --secondary: hsl(345, 55%, 29%);
     --tertiary: hsl(338, 72%, 15%);
     --additional: hsl(355, 59%, 30%);
@@ -8,7 +9,7 @@
 }
 
 body {
-    background: var(--primary);
+    background: var(--primary2);
 }
 
 main {
